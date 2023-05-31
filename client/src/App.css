@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-#root, :root, html, body {
+#root, :root, html, body, form {
   width: 100%;
   height: 100%;
 }
@@ -37,7 +37,7 @@ body {
   padding: 7rem 2rem 5rem 2rem;
   border-radius: 1.5rem;
   width: 60%;
-  max-width: 700px;
+  max-width: 800px;
 }
 
 .auth-wrapper input, .input-group-text {
@@ -66,14 +66,11 @@ body {
 .form-control:focus {
   outline: none !important;
 }
-         
-         
-
 
 .btn-grad {
   background-image: linear-gradient(to right, #005C97 0%, #363795  51%, #005C97  100%);
   padding: 20px 40px;
-  margin-top: 10px;
+  margin-top: 30px;
   box-shadow: 0 2px 20px 2px #00000038;
   float: inline-end;
   text-align: center;
@@ -91,6 +88,27 @@ body {
   text-decoration: none;
 }
 
+.generatedurl {
+  color: black;
+  text-align: left;
+  margin-top: 70px;
+}
 
+#copy-btn {
+  height: 100%;
+  margin: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 
+#generatedURL {
+  background-color: #dbdada;
+  border: none;
+}
+
+form {
+  display: flex ;
+  flex-direction: column;
+  justify-content: space-between;
+}
 

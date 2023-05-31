@@ -165,7 +165,7 @@ const Form = () => {
         </div>
 
         {/* Alias Field */}
-        <div className="form-group">
+        <div className="">
           <div className="input-group mt-4 mb-2">
             <div className="input-group-prepend">
               <span className="input-group-text">linkchopper.com/</span>
@@ -192,8 +192,41 @@ const Form = () => {
           )}
         </div>
 
+        {/* Generated URL */}
+        {formField.generatedURL === "" ? (
+          <div></div>
+        ) : (
+          <div className="generatedurl">
+            <span>Your chopped URL is:</span>
+            <div className="input-group">
+              <input
+                id="generatedURL"
+                disabled
+                type="text"
+                value={formField.generatedURL}
+                className="form-control"
+              />
+              <div className="input-group-append">
+                <OverlayTrigger
+                  key={"top"}
+                  placement="top"
+                  overlay={<Tooltip>{formField.toolTipMessage}</Tooltip>}
+                >
+                  <button
+                    onClick={() => copyToClipboard()}
+                    title="Tooltip on top"
+                    className="btn-grad "
+                    id="copy-btn"
+                  >
+                    Copy
+                  </button>
+                </OverlayTrigger>
+              </div>
+            </div>
+          </div>
+        )}
         {/* Button */}
-        <button className=" btn-grad" type="button" onClick={onSubmit}>
+        <button className="main-btn btn-grad" type="button" onClick={onSubmit}>
           {formField.loading ? (
             <div>
               <span
@@ -213,38 +246,6 @@ const Form = () => {
             </div>
           )}
         </button>
-
-        {/* Generated URL */}
-        {formField.generatedURL === "" ? (
-          <div></div>
-        ) : (
-          <div className="genratedurl">
-            <span>Your chopped URL is:</span>
-            <div className="input-group mb-3">
-              <input
-                disabled
-                type="text"
-                value={formField.generatedURL}
-                className="form-control"
-              />
-              <div className="input-group-append">
-                <OverlayTrigger
-                  key={"top"}
-                  placement="top"
-                  overlay={<Tooltip>{formField.toolTipMessage}</Tooltip>}
-                >
-                  <button
-                    onClick={() => copyToClipboard()}
-                    title="Tooltip on top"
-                    className="btn btn-outline-secondary"
-                  >
-                    Copy
-                  </button>
-                </OverlayTrigger>
-              </div>
-            </div>
-          </div>
-        )}
       </form>
     </div>
   );
