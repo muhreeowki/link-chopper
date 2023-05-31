@@ -113,7 +113,7 @@ const Form = () => {
     const alias = formField.preferedAlias;
     const generatedKey = alias !== "" ? alias : nanoid(5);
     console.log(generatedKey);
-    const generatedURL = "linkchopper.com/" + generatedKey; // Domain might change
+    const generatedURL = "https://www.link-chopper.vercel.app/" + generatedKey; // Domain might change
     // 3. Push generated url to db
     const db = getDatabase();
     set(ref(db, `/${generatedKey}`), {
@@ -169,7 +169,7 @@ const Form = () => {
         <div className="">
           <div className="input-group mt-4 mb-2">
             <div className="input-group-prepend">
-              <span className="input-group-text">linkchopper.com/</span>
+              <span className="input-group-text">linkchopper.com</span>
             </div>
             <input
               id="preferedAlias"
