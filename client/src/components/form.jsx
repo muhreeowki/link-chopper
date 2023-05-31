@@ -132,6 +132,7 @@ const Form = () => {
       })
       .catch((err) => {
         // Handle Error
+        console.log(err)
       });
   };
 
