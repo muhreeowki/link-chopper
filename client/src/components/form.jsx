@@ -138,11 +138,10 @@ const Form = () => {
   return (
     <div className="container">
       <form autoComplete="off">
-        <h1>Link Chopper</h1>
+        <h1 className="logo">Link Chopper</h1>
 
         {/* Long url input field */}
-        <div className="form-group">
-          <label htmlFor="longURL">Enter URL</label>
+        <div className="form-group mb-2">
           <input
             id="longURL"
             onChange={handleChange}
@@ -152,7 +151,7 @@ const Form = () => {
             className={`form-control ${
               checkForError("longURL") ? "is-invalid" : ""
             }`}
-            placeholder="https://www.example.com/..."
+            placeholder="Enter URL"
           />
         </div>
 
@@ -167,8 +166,7 @@ const Form = () => {
 
         {/* Alias Field */}
         <div className="form-group">
-          <label htmlFor="basic-url">Enter prefered alias</label>
-          <div className="input-group mb-3">
+          <div className="input-group mt-4 mb-2">
             <div className="input-group-prepend">
               <span className="input-group-text">linkchopper.com/</span>
             </div>
@@ -180,7 +178,7 @@ const Form = () => {
               onChange={handleChange}
               value={formField.preferedAlias}
               type="text"
-              placeholder="eg. mUHr3 (Optional)"
+              placeholder="Prefered Key (Optional)"
             />
           </div>
 
@@ -195,7 +193,7 @@ const Form = () => {
         </div>
 
         {/* Button */}
-        <button className="btn btn-primary" type="button" onClick={onSubmit}>
+        <button className=" btn-grad" type="button" onClick={onSubmit}>
           {formField.loading ? (
             <div>
               <span
